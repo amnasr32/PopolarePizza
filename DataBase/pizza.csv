@@ -1,0 +1,12 @@
+pizza_id,nom,desc_pizza,prix
+1,4 Fromages,Sauce tomate;mozzarella;chèvre;emmental;gruyère,10.00
+2,Burrata,Sauce tomate; tomate cerises; basilic; huile d'olive; burrata,11.00
+3,Calzone,Sauce tomate; olives; champignons; origan; échalote; jambon; mozzarella,9.00
+4,Diavola,Sauce tomate; mozzarella; pepperoni; olives,8.0
+5,Fruits de mer,Crème fraiche; moules; crevettes; calamar; herbes de provences; emmental,13.00
+6,Margherita,Sauce tomate; mozzarella ;Oeuf;Crème fraiche; mozzarella; epinards,12.00
+7,Poulet,Crème fraiche; mozzarella; champignons; poulet,11.00
+8,Prosciutto,Sauce tomate; mozzarella; jambon; champignons ,10.00
+9,Saumon,Crème fraiche; mozzarella; thyn; saumon; poivre rouge,12.00
+10,Savoyarde,Crème fraiche; pomme de terre; lardons; raclette,11.00
+11,Végétarienne;Sauce tomate; poivron, courgette; aubergine; tomate,15.00

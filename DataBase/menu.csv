@@ -1,0 +1,5 @@
+id_menu,nom_menu,desc_menu,prix
+1,Menu solo, 1 entrée + 1 pizza Medium + 1 boisson (33cl),16.0
+2,Menu duo, 2 entrées + 2 pizzas Medium + 1 boisson (1L),25.0
+3,Menu famille, 2 entrées + 2 pizzas Large + 2 boissons (1L),35.0
+4,Menu mega, 2 entrées + 4 pizzas Medium + 2 boissons (1L),45.0

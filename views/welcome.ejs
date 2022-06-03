@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Popolare Pizza</title>
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+    <script type="text/javascript" src="principal.js"></script>
+  </head>
+  <style>
+    body{
+        background-color:#021129 ;
+        font-size: 50px;
+        color: gold;
+    }
+    a{
+        font-size: 25px;
+        color: gold;
+        display: inline-block;
+       
+
+    }
+      .navbar
+  {
+    float:top;
+    width:100%;
+    height:50px;
+    display:inline-block;
+  }
+
+  li {
+            float: left;
+            display: inline-block;
+        }
+
+        .nav {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            position: relative;
+            display: inline-block;
+        }
+
+        a:link, a:visited {
+            display: inline-block;
+            width: auto;
+            line-height: 100px;
+            /*padding-top: 13px;*/
+            padding-right: 20px;
+            padding-bottom: 20px;
+            padding-left: 20px;
+            text-decoration: none;
+            text-align: center;
+            background-color: #00566b;
+            background-size:100px;
+            color: white;
+            font-weight: bold;
+            
+        }
+
+        a:hover, a:active {
+            background-color: #C0C0C0;
+        }
+
+        a:active {
+            color: grey;
+        }
+
+        .nav-item {
+            font-size: 17px;
+          
+        }
+        figure img {
+          display: inline-block;
+          justify-content: space-between;
+         }
+
+         
+         .texte_centrer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.cesar{
+  text-align: center;
+}
+<!----- bouton html--->   
+.styled {
+    border: 0;
+    line-height: 2.5;
+    padding: 0 20px;
+    font-size: 1rem;
+    text-align: center;
+    color: #fff;
+    text-shadow: 1px 1px 1px #000;
+    border-radius: 10px;
+    background-color: rgba(220, 0, 0, 1);
+    background-image: linear-gradient(to top left,
+                                      rgba(0, 0, 0, .2),
+                                      rgba(0, 0, 0, .2) 30%,
+                                      rgba(0, 0, 0, 0));
+    box-shadow: inset 2px 2px 3px rgba(255, 255, 255, .6),
+                inset -2px -2px 3px rgba(0, 0, 0, .6);
+}
+
+.styled:hover {
+    background-color: rgba(255, 0, 0, 1);
+}
+
+.styled:active {
+    box-shadow: inset -2px -2px 3px rgba(255, 255, 255, .6),
+                inset 2px 2px 3px rgba(0, 0, 0, .6);
+}
+p{
+  font-size: 20px;
+        color: gold;
+        position: relative;
+}
+#but,#but-salade-cesar,#qt-salade-cesar,
+#evian,#qt-evian{
+  background-color: #00566b;
+  color: #fff;
+  padding: 0 20px;
+  box-shadow: inset 2px 2px 3px rgba(255, 255, 255, .6),
+
+}
+figure{
+  display: flex;
+  justify-content: space-between;
+}
+form{
+  padding: 5px;
+  
+  flex-wrap: wrap;
+
+                        margin-left: -8px;
+                        margin-right: -8px;
+  /*width: 100%;*/
+
+vertical-align: bottom;
+}
+form.div{
+  vertical-align: bottom;
+
+}
+.img{
+  flex-basis: 33%;
+
+padding-left: 8px;
+padding-right: 8px;
+}
+    </style>
+
+<body >   
+  <header class="jumbotron">
+    <div class="container">
+    
+
+<div class="navbar">
+  <ul class="nav">
+    <li>
+    <a   class="nav-item" href="#">
+      <img  src="/logo.jpg" style="width:100px; height: 50px;               padding-bottom: 20px;
+      padding: 0px;   position: relative;        
+
+      "> </img>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link active" href="#">La carte</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-link" href="/livraison">Espace Livreur</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/promo.ejs">Promos</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-link" href="/order">Commander</a>
+    </li>
+    <li class="nav-item">
+      <a id="panier" class="nav-link" href="/panier">Panier</a>
+    </li>
+      
+  </ul>
+</div>
+<div class="container">
+ 
+<center>
+  <h5>Commandez en ligne</h5>
+  <img  src="/delivery.jpg" style="width:800px; height: 400px;"> </img>
+
+  <h5>Les entrées</h5>
+  <figure>
+      <img  src="/Entrée/cesar.jpg" style="width:400px; height: 200px;"> 
+        
+        
+        <p>Salade César </p>
+      
+        <form  class="add-to-basket" >
+        <div>
+            <input  class="favorite styled"
+            type="button"
+            value="Ajouter au panier" id="but-salade-cesar">
+
+          </div>
+          <div class="col-7-4" >
+            <input type ="number" maxlength="1" min="0"  max="5" id="qt-salade-cesar" class="offscreen"></input>
+
+          </div>
+         
+        </form>
+    
+     
+
+      </img>
+      
+  
+    <img  src="/Entrée/garlic.jpg" style="width:400px; height: 200px;"> 
+      <p> Garlic  </p>
+    <form  class="add-to-basket" >
+      <div>
+        <input  class="favorite styled"
+        type="button"
+        value="Ajouter au panier" id="but">
+
+      </div>
+      <div class="col-8-4" >
+        <input type ="number" maxlength="3" min="0" id="at-quantity-label" class="offscreen"></input>
+
+      </div>
+     
+    </form>
+    
+     </img>
+
+    <img  src="/Entrée/sauce.jpg" style="width:400px; height: 200px;"><p>Sauce  </p> 
+    <form  class="add-to-basket" >
+      <div>
+        <input  class="favorite styled"
+        type="button"
+        value="Ajouter au panier" id="but">
+
+      </div>
+      
+      <div class="col-8-4" >
+        <input type ="number" maxlength="3" min="0" id="at-quantity-label" class="offscreen"></input>
+
+      </div>
+     
+    </form>
+    
+      </img>
+  </figure>
+
+
+<figure>
+  <img  src="/Entrée/mozzastick.jpg" style="width:400px; height: 200px;"><p>Mozzastick </p><form  class="add-to-basket" >
+    <div>
+      <input  class="favorite styled"
+      type="button"
+      value="Ajouter au panier" id="but">
+
+    </div>
+    
+    <div class="col-8-4" >
+      <input type ="number" maxlength="3" min="0" id="at-quantity-label" class="offscreen"></input>
+
+    </div>
+   
+  </form>  </img>
+
+    <img  src="/Entrée/nuggets.jpg" style="width:400px; height: 200px;"><p>Nuggets </p>  <form  class="add-to-basket" >
+      <div>
+        <input  class="favorite styled"
+        type="button"
+        value="Ajouter au panier" id="but">
+
+      </div>
+      
+      <div class="col-8-4" >
+        <input type ="number" maxlength="3" min="0" id="at-quantity-label" class="offscreen"></input>
+
+      </div>
+     
+    </form>
+  </img>
+    <img  src="/Entrée/wings.jpg" style="width:400px; height: 200px;"> <p>Wings </p> <form  class="add-to-basket" >
+      <div>
+        <input  class="favorite styled"
+        type="button"
+        value="Ajouter au panier" id="but">
+
+      </div>
+      
+      <div class="col-8-4" >
+        <input type ="number" maxlength="3" min="0" id="at-quantity-label" class="offscreen"></input>
+
+      </div>
+     
+    </form></img>
+</figure>
+  
+  
+  <h5>Les Pizza</h5>
+  <figure>
+    <img  src="/Pizza/4fromage.jpg" style="width:400px; height: 200px;"> </img>
+    <img  src="/Pizza/burrata.jpg" style="width:400px; height: 200px;"> </img>
+    <img  src="/Pizza/calzone.jpg" style="width:400px; height: 200px;"> </img>
+  </figure>
+<figure>
+  <img  src="/Pizza/diavola.jpg" style="width:400px; height: 200px;"> </img>
+    <img  src="/Pizza/fruit_mer.jpg" style="width:400px; height: 200px;"> </img>
+    <img  src="/Pizza/Margherita.jpg" style="width:400px; height: 200px;"> </img>
+</figure>
+<figure>
+  <img  src="/Pizza/oeuf.jpg" style="width:400px; height: 200px;"> </img>
+  <img  src="/Pizza/poulet.jpg" style="width:400px; height: 200px;"> </img>
+  <img  src="/Pizza/prosciutto.jpg" style="width:400px; height: 200px;"> </img>
+</figure>
+<figure>
+<img  src="/Pizza/saumon.jpg" style="width:400px; height: 200px;"> </img>
+  <img  src="/Pizza/savoyarde.jpg" style="width:400px; height: 200px;"> </img>
+  <img  src="/Pizza/vege.jpg" style="width:400px; height: 200px;"> </img>
+</figure>
+
+
+
+
+
+  <h5>Les Menus</h5>
+  <h5>Les Boissons</h5>
+  <figure id="boisson" class="boisson">
+    <img  src="/Boissons/evian.jpg" style="width:400px; height: 200px;"> <p> Evian </p><form  class="add-to-basket" >
+      <div>
+        <input  class="favorite styled" id="evian"
+        type="button"
+        value="Ajouter au panier" >
+
+      </div>
+      <script>
+      
+     /* const  pg = require('pg')
+const pool = new pg.Pool({
+    user: 'amnasr',
+    host: 'localhost',
+    database: 'popolare',
+    password: 'FacoupMy', // accès à une information externe
+    //port: 8080,
+    queueLimit : 0, // unlimited queueing
+    connectionLimit : 0 // unlimited connections 
+
+    });*/
+      
+   /*   $(document).ready (function () {
+        const btn = document.getElementById('evian');
+        btn.addEventListener('click', function onClick(event) {
+            // 👇️ Change text color globally
+            //console.log("click")
+            document.write( "Ajouté" );
+            //var drink = get_drink("Evian","1.5L")
+            //InsertElem = async (1,drink.nom,drink,1,drink.prix)
+            //console.log(drink)
+          
+            // 👇️ Change text color for clicked element only
+            // event.target.style.color = 'salmon';
+          });
+        });
+        */
+       /* const InsertElem = async (id,elem,qt,prix) => {
+        try {
+            await client1.connect();  // gets connection
+            await client1.query('INSERT INTO  panier values ($1,$2,$3,$4);',[id,elem,qt,prix]);
+            return true;
+        } catch (error) {
+            console.error(error.stack);
+            return false;
+        } finally {
+            var re = await client1.query('SELECT * FROM panier', (err, res) => {
+                console.log(res.rows)
+                
+              
+             client1.end(); 
+           
+               
+             // closes connection
+        })
+    };
+    }
+        async function get_drink(productname,taille) {    
+        try {
+                    const client =  await pool.connect();
+                    console.log('connected')
+                    
+                    results.boisson = await client.query('SELECT * FROM boisson', (err, res) => {
+                    console.log(res.rows)
+                    for(var i=0;i<res.rows.length;i++){
+                        if(productname===res.rows[i].nom && taille===res.rows[i].taille){
+                            console.log( "ici")
+                            console.log(res.rows[i]);
+                            return res.rows[i];
+                        }
+                    client.end()
+                   
+                }});
+            }
+        catch(err){
+                console.log(err);
+            }
+        }
+        
+        */
+        
+        
+        
+        </script>
+      <div class="col-8-4" >
+        <input type ="number" maxlength="1" min="0"  max="5" id="qt-evian" class="offscreen"></input>
+
+      </div>
+     
+    </form></img>
+      <img  src="/Boissons/ice_tea.jpg" style="width:400px; height: 200px;"> <p>Lipton Ice Tea </p><form  class="add-to-basket" >
+        <div>
+          <input  class="favorite styled"
+          type="button"
+          value="Ajouter au panier">
+  
+        </div>
+        
+        <div class="col-8-4" >
+          <input type ="number" maxlength="3" min="0" id="at-quantity-label" class="offscreen"></input>
+  
+        </div>
+       
+      </form>
+    
+    </img>
+      <img  src="/Boissons/oasis_tropical.jpg" style="width:400px; height: 200px;"> <p> Oasis Tropical </p><form  class="add-to-basket" >
+        <div>
+          <input  class="favorite styled"
+          type="button"
+          value="Ajouter au panier">
+  
+        </div>
+        
+        <div class="col-8-4" >
+          <input type ="number" maxlength="3" min="0" id="at-quantity-label" class="offscreen"></input>
+  
+        </div>
+       
+      </form>
+    
+    
+    </img>
+    </figure>
+
+    <figure>
+      <img  src="/Boissons/sprite.jpg" style="width:400px; height: 200px;"> <p> Sprite </p><form  class="add-to-basket" >
+        <div>
+          <input  class="favorite styled"
+          type="button"
+          value="Ajouter au panier">
+  
+        </div>
+        
+        <div class="col-8-4" >
+          <input type ="number" maxlength="3" min="0" id="at-quantity-label" class="offscreen"></input>
+  
+        </div>
+       
+      </form></img>
+        <img  src="/Boissons/schweppes.jpg" style="width:400px; height: 200px;"><p> Schweppes </p><form  class="add-to-basket" >
+          <div>
+            <input  class="favorite styled"
+            type="button"
+            value="Ajouter au panier">
+    
+          </div>
+          
+          <div class="col-8-4" >
+            <input type ="number" maxlength="3" min="0" id="at-quantity-label" class="offscreen"></input>
+    
+          </div>
+         
+        </form> </img>
+        <img  src="/Boissons/coca_original.jpg" style="width:400px; height: 200px;"> <p> Coca original </p><form  class="add-to-basket" >
+          <div>
+            <input  class="favorite styled"
+            type="button"
+            value="Ajouter au panier">
+    
+          </div>
+          
+          <div class="col-8-4" >
+            <input type ="number" maxlength="3" min="0" id="at-quantity-label" class="offscreen"></input>
+    
+          </div>
+         
+        </form></img>
+      </figure>
+      <figure>
+        <img  src="/Boissons/coca_cherry.jpg" style="width:400px; height: 200px;"><p> Coca Cherry </p><form  class="add-to-basket" >
+          <div>
+            <input  class="favorite styled"
+            type="button"
+            value="Ajouter au panier">
+    
+          </div>
+          
+          <div class="col-8-4" >
+            <input type ="number" maxlength="3" min="0" id="at-quantity-label" class="offscreen"></input>
+    
+          </div>
+         
+        </form> </img>
+          <img  src="/Boissons/badoit.jpg" style="width:400px; height: 200px;"><p> Badoit </p><form  class="add-to-basket" >
+            <div>
+              <input  class="favorite styled"
+              type="button"
+              value="Ajouter au panier">
+      
+            </div>
+            
+            <div class="col-8-4" >
+              <input type ="number" maxlength="3" min="0" id="at-quantity-label" class="offscreen"></input>
+      
+            </div>
+           
+          </form> </img>
+          <img  src="/Boissons/oasis_fruit_rouge.jpg" style="width:400px; height: 200px;"><p> Oasis Fruit </p><form  class="add-to-basket" >
+            <div>
+              <input  class="favorite styled"
+              type="button"
+              value="Ajouter au panier">
+      
+            </div>
+            
+            <div class="col-8-4" >
+              <input type ="number" maxlength="3" min="0" id="at-quantity-label" class="offscreen"></input>
+      
+            </div>
+           
+          </form> </img>
+        </figure>
+  <h5>Les Desserts</h5>
+  <figure>
+    <img  src="/Dessert/fondant.jpg" style="width:400px; height: 200px;"><p> Fondant </p><form  class="add-to-basket" >
+      <div>
+        <input  class="favorite styled"
+        type="button"
+        value="Ajouter au panier">
+
+      </div>
+      
+      <div class="col-8-4" >
+        <input type ="number" maxlength="3" min="0" id="at-quantity-label" class="offscreen"></input>
+
+      </div>
+     
+    </form> </img>
+      <img  src="/Dessert/cookie.jpg" style="width:400px; height: 200px;"> <p> Cookie </p><form  class="add-to-basket" >
+        <div>
+          <input  class="favorite styled"
+          type="button"
+          value="Ajouter au panier">
+  
+        </div>
+        
+        <div class="col-8-4" >
+          <input type ="number" maxlength="3" min="0" id="at-quantity-label" class="offscreen"></input>
+  
+        </div>
+       
+      </form></img>
+    </figure>
+
+
+
+</center>
+
+    <script src="main.js"></script>
+
+  </body>
+</html>

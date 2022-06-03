@@ -1,0 +1,13 @@
+tag,prix,size,pate
+MC,5,Taille medium,Pâte classique
+MF,5,Taille medium,Pâte fine
+ME,6,Taille medium,Pâte épaisse
+MCh,8,Taille medium,Pâte cheezy
+LC,12,Taille large,Pâte classique
+LF,12,Taille large,Pâte fine
+LE,13,Taille large,Pâte épaisse
+LCh,15,Taille large,Pâte cheezy
+XLC,16,Taille XL,Pâte classique
+XLF,16,Taille XL,Pâte fine
+XLE,17,Taille XL,Pâte épaisse
+XLCh,19,Taille XL,Pâte cheezy

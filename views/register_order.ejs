@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Popolare Pizza</title>
+
+    <script src="jquery-3.6.0.js"></script>
+    <script src="bootstrap.min.js"></script>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link href="welcome.css" rel="stylesheet">
+  </head>
+  <style>
+    small{
+      font-size: 15px;
+        color: gold;
+    }
+       body{
+        background-color:#021129 ;
+        font-size: 30px;
+        color: gold;
+    }
+      
+    a{
+        font-size: 25px;
+        color: gold;
+    }
+      .navbar
+  {
+    float:top;
+    width:100%;
+    height:50px;
+    display:inline-block;
+  }
+
+  li {
+            float: left;
+            display: inline-block;
+        }
+
+        .nav {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            position: relative;
+            display: inline-block;
+        }
+
+        a:link, a:visited {
+            display: inline-block;
+            width: 200px;
+            line-height: 40px;
+            padding-top: 13px;
+            padding-right: 5px;
+            padding-bottom: 4px;
+            padding-left: 5px;
+            text-decoration: none;
+            text-align: center;
+            background-color: #00566b;
+            background-size: 100px;
+            color: white;
+            font-weight: bold;
+            float: left;
+        }
+
+        a:hover, a:active {
+            background-color: #C0C0C0;
+        }
+
+        a:active {
+            color: grey;
+        }
+
+        .nav-item {
+            font-size: 17px;
+          
+        }
+        figure img {
+          display: inline-block;
+          justify-content: space-between;
+         }
+
+         
+         .texte_centrer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.cesar{
+  text-align: center;
+}
+<!-----   bouton html--->   
+.styled {
+    border: 0;
+    line-height: 2.5;
+    padding: 0 20px;
+    font-size: 1rem;
+    text-align: center;
+    color: #fff;
+    text-shadow: 1px 1px 1px #000;
+    border-radius: 10px;
+    background-color: rgba(220, 0, 0, 1);
+    background-image: linear-gradient(to top left,
+                                      rgba(0, 0, 0, .2),
+                                      rgba(0, 0, 0, .2) 30%,
+                                      rgba(0, 0, 0, 0));
+    box-shadow: inset 2px 2px 3px rgba(255, 255, 255, .6),
+                inset -2px -2px 3px rgba(0, 0, 0, .6);
+}
+
+.styled:hover {
+    background-color: rgba(255, 0, 0, 1);
+}
+
+.styled:active {
+    box-shadow: inset -2px -2px 3px rgba(255, 255, 255, .6),
+                inset 2px 2px 3px rgba(0, 0, 0, .6);
+}
+  </style>
+  <body>
+
+
+
+    <div class="navbar">
+        <ul class="nav">
+          <li>
+          <a   class="nav-item" href="#">
+            <img  src="/logo.jpg" style="width:25px; height: 100;"> </img>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="#">LA CARTE</a>
+          </li>
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/register_order">CONNEXION</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/promo.ejs">PROMOS</a>
+          </li>
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/commande">COMMANDER</a>
+          </li>
+          <li class="nav-item">
+            <a id="panier" class="nav-link" href="/panier">PANIER</a>
+          </li>
+            
+        </ul>
+      </div>
+      <center><h6>  <%= titre %> </h6>    </center>
+    <center>
+    <table>
+
+        <form method="post" action="/order">
+    
+            
+                <tr>
+                    <td><label for="name"> Nom: </label></td>
+                    <td>
+                        <input type="text" id="name" name="nom"  >
+                    </td>
+                </tr>
+
+                <tr>
+                    <td><label for="prenom"> Prenom: </label></td>
+                    <td>
+                        <input type="text" id="prenom" name="prenom"  >
+                    </td>
+                </tr>
+
+                <tr>
+                    <td><label for="email"> Votre adresse mail : </label></td>
+                    <td>
+                        <input type="email" id="email" name="email"
+                         >
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td><label for="phone"> Numéro de téléphone </label></td>
+                    <td>
+                        <input type="tel" id="phone" name="phone"
+                                    pattern="[0-9]{10}"
+                                    >
+                    </td>
+                </tr>
+
+                <tr>
+                    <td><label for="adress"> Adresse de livraison: </label></td>
+                    
+                    <td>
+                        <input type="text" name="adress" id= "adress" >
+                    </td>
+                </tr>
+                <!--  <p>Votre adresse :<br/><input type="text" name="Votre adresse" id= "nom" value="votre adresse" size="60" maxlength="60" /></p>
+ <p>Code Postal: <input type="text" name="Code Postal" id= "nom" value="Code Postal" size="5" maxlength="5"/>
+Ville : <input type="text" name="ville" id= "ville" value="" size="12" maxlength="12"/></p>-->
+
+                <tr>
+                    <td><label for="code"> code d'entrée d'immeuble: </label></td>
+                    <td>
+                        <input type="text" id="text"  name="code">
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="heure"> Heure de livraison : </label>                  
+                        <small>Horaires d'ouverture de 10:00 à 23:00</small>
+                    </td>
+                    <td>                           
+
+                        <input type="time" id="settime" name="heure" step="1" min="10:00:00" max="23:00:00"
+                              ><span class="validity"></span>
+                              <script>
+                                document.getElementById("settime").value = "00:00:00";
+                              </script>
+                    </td>
+                </tr>
+
+          
+                <tr>
+                    <td>
+                        
+                        <button type="submit" name="submit" id="submit" > Commander</button>
+                    </td>
+                </tr>
+    
+        </form>
+      <!--<form method="post" action="/">
+
+        <button type="reset" name="reset" id="reset"> réinitialiser</button>
+      </form>-->
+
+
+</table>
+</center>
+<center>
+    <a href="/welcome" > Retour à la page principale</a>
+    </center>
+
+  </body>
+</html>

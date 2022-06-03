@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+   
+    <title>Popolare Pizza</title>
+
+    <link href="welcome.css" rel="stylesheet">
+  </head>
+  <style>
+   small{
+      font-size: 15px;
+        color: gold;
+    }
+       body{
+        background-color:#021129 ;
+        font-size: 30px;
+        color: gold;
+    }
+      
+    a{
+        font-size: 25px;
+        color: gold;
+    }
+      .navbar
+  {
+    float:top;
+    width:100%;
+    height:50px;
+    display:inline-block;
+  }
+
+  li {
+            float: left;
+            display: inline-block;
+        }
+
+        .nav {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            position: relative;
+            display: inline-block;
+        }
+
+        a:link, a:visited {
+            display: inline-block;
+            width: 200px;
+            line-height: 40px;
+            padding-top: 13px;
+            padding-right: 5px;
+            padding-bottom: 4px;
+            padding-left: 5px;
+            text-decoration: none;
+            text-align: center;
+            background-color: #00566b;
+            background-size: 100px;
+            color: white;
+            font-weight: bold;
+            float: left;
+        }
+
+        a:hover, a:active {
+            background-color: #C0C0C0;
+        }
+
+        a:active {
+            color: grey;
+        }
+
+        .nav-item {
+            font-size: 17px;
+          
+        }
+        figure img {
+          display: inline-block;
+          justify-content: space-between;
+         }
+
+         
+         .texte_centrer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.cesar{
+  text-align: center;
+}
+<!-----   bouton html--->   
+.styled {
+    border: 0;
+    line-height: 2.5;
+    padding: 0 20px;
+    font-size: 1rem;
+    text-align: center;
+    color: #fff;
+    text-shadow: 1px 1px 1px #000;
+    border-radius: 10px;
+    background-color: rgba(220, 0, 0, 1);
+    background-image: linear-gradient(to top left,
+                                      rgba(0, 0, 0, .2),
+                                      rgba(0, 0, 0, .2) 30%,
+                                      rgba(0, 0, 0, 0));
+    box-shadow: inset 2px 2px 3px rgba(255, 255, 255, .6),
+                inset -2px -2px 3px rgba(0, 0, 0, .6);
+}
+
+.styled:hover {
+    background-color: rgba(255, 0, 0, 1);
+}
+
+.styled:active, #delete:active{
+    box-shadow: inset -2px -2px 3px rgba(255, 255, 255, .6),
+                inset 2px 2px 3px rgba(0, 0, 0, .6);
+}
+#delete,#confirm{
+  background-color: #00566b;
+  color: #fff;
+  padding: 0 20px;
+  box-shadow: inset 2px 2px 3px rgba(255, 255, 255, .6),
+
+}
+    #divTotal{
+            background-color:  #00566b;
+        }
+        .affix{
+            right: 0px;
+        }
+        .affix-top{
+            right: 0px;
+            position: fixed;
+        }
+        td,
+th {
+    border: 1px solid rgb(190, 190, 190);
+    padding: 40px;
+}
+
+td {
+    text-align: center;
+}
+
+
+
+th[scope="col"] {
+  border-collapse: collapse;
+    background-color: #0c4634;
+    color: #fff;
+}
+
+th[scope="row"] {
+  border-collapse: collapse;
+    /*background-color: #dbe6cc;*/
+}
+
+caption {
+    padding: 20px;
+    caption-side: bottom;
+}
+
+table {
+    border-collapse: collapse;
+    border: 2px solid rgb(200, 200, 200);
+    letter-spacing: 1px;
+    font-family: sans-serif;
+    font-size: 30;
+}
+
+
+    </style>
+<body>
+  <div class="navbar">
+    <ul class="nav">
+      <li>
+      <a   class="nav-item" href="#">
+        <img  src="/logo.jpg" style="width:25px; height: 100;"> </img>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active" href="#">LA CARTE</a>
+      </li>
+      
+      <li class="nav-item">
+        <a class="nav-link" href="/register_order">CONNEXION</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/promo.ejs">PROMOS</a>
+      </li>
+      
+      <li class="nav-item">
+        <a class="nav-link" href="/commande">COMMANDER</a>
+      </li>
+      <li class="nav-item">
+        <a id="panier" class="nav-link" href="/panier">PANIER</a>
+      </li>
+        
+    </ul>
+  </div>
+       <br></br>
+   <!--- <script> function Produit(id, designation, prix) {
+        this.id= id;
+        this.prix= prix;
+        this.designation= designation;
+        this.toString= function() {
+          return this.designation + " "+ prix;
+        }
+    }
+    
+    var catalogue= new Array();
+    catalogue.push(new Produit(1, "ordinateur", 200));
+    catalogue.push(new Produit(2, "souris", 20));
+    catalogue.push(new Produit(3, "uniter centrale", 620));
+    var panier= new Array();
+    
+    
+    function remplirCatalogue() {
+          var cat= document.getElementById('cat');
+        for (var i in catalogue) {
+            var e= document.createElement("option");
+            e.value=i;
+              var txt= document.createTextNode(catalogue[i].designation);
+              e.appendChild(txt);
+            cat.appendChild(e);
+        }
+    }
+    
+    function ajouterCase(parent, txt) {
+    var e= document.createElement("td");
+    e.appendChild(document.createTextNode(txt));
+    parent.appendChild(e);
+    }
+    
+    function calculerTotal() {
+    var tot= 0;
+    for (var p in panier) {
+        tot+= panier[p].prix;
+    }
+    return tot;
+    }
+    
+    function ajouter() {
+          var cat= document.getElementById('cat');
+        var sel= cat.options[cat.selectedIndex].value;
+        var prod= catalogue[sel];
+        panier.push(prod);
+        var ligne= document.createElement("tr");
+          ajouterCase(ligne,prod.designation);
+          ajouterCase(ligne,prod.prix);
+        document.getElementById("pan").appendChild(ligne);
+        document.getElementById("tot").innerHTML= calculerTotal();
+    }
+    </script>
+    <select id="cat" multiple>
+    </select>
+    
+    <button onclick="ajouter();">ajouter</button>
+    
+    <table id="pan">
+    <tr><th>désignation</th><th>prix</th></tr>
+    </table>
+    
+    <p>Total <span id="tot">0</span></p>
+    
+    <script src="fonction.js"></script>
+    <script>
+    remplirCatalogue();
+    </script>
+--->
+
+
+
+
+
+<div class="col-xs-7 col-md-8 col-sm-8 col-lg-8">
+  <table class="table">
+
+    <thead>
+        <tr> 
+          <th scope="col">  Article  </th>
+
+         
+
+          <th scope="col">  Quantité  </th>
+           <th scope="col">  Prix  </th>
+           <th scope="col">  Selectionner  </th>
+           
+          </tr>
+    </thead>
+  
+    
+      
+
+  
+ <% for(let i = 0 ; i < panier.length ;i++){
+    %>  <tr> 
+    <th scope="row"> <%=panier[i].produit %></th>
+    <th scope="row"> <%=panier[i].quantité %></th>
+    <th scope="row"> <%=panier[i].total %> €</th>
+    <td>   <input type="checkbox" name="select" id="select" /> </td>
+
+  </tr>
+
+    <% } %>
+  
+</table>
+</div>
+ 
+<div class="col-xs-5 col-md-4 col-sm-4 col-lg-4">
+  <div class="panel panel-primary">
+    <div id="divTotal" class="panel-heading">
+        <h3 class="panel-title">Total : <%=total%>  €</h3> 
+    </div>
+   
+  </div>
+  
+  <div class="text-center">
+    <button id="confirm">Passer la commande</button>
+    <button id="delete">Supprimer</button>
+
+
+    <!--<a href="#/checkout" class="btn btn-danger">Checkout <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
+    </a>-->
+  </div>
+</div>
+<br></br>
+
+            <center>
+            <a class="welcome" href="/welcome" > Retour à la page principale</a>
+            </center>
+            </body>
+   
+
+  </body>
+</html>
+
+
+
+
+

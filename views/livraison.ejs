@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+   
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Popolare Pizza</title>
+
+    <script src="jquery-3.6.0.js"></script>
+    <script src="bootstrap.min.js"></script>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link href="welcome.css" rel="stylesheet">
+   
+  </head>
+  <style>
+      body{
+        background-color:#021129 ;
+        font-size: 30px;
+        color: gold;
+    }
+      
+    a{
+        font-size: 25px;
+        color: gold;
+    }
+      .navbar
+  {
+    float:top;
+    width:100%;
+    height:50px;
+    display:inline-block;
+  }
+
+  li {
+            float: left;
+            display: inline-block;
+        }
+
+        .nav {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            position: relative;
+            display: inline-block;
+        }
+
+        a:link, a:visited {
+            display: inline-block;
+            width: 200px;
+            line-height: 40px;
+            padding-top: 13px;
+            padding-right: 5px;
+            padding-bottom: 4px;
+            padding-left: 5px;
+            text-decoration: none;
+            text-align: center;
+            background-color: #00566b;
+            background-size: 100px;
+            color: white;
+            font-weight: bold;
+            float: left;
+        }
+
+        a:hover, a:active {
+            background-color: #C0C0C0;
+        }
+
+        a:active {
+            color: grey;
+        }
+
+        .nav-item {
+            font-size: 17px;
+          
+        }
+        #reset,#submit{
+  background-color: #00566b;
+  color: #fff;
+  padding: 0 20px;
+  box-shadow: inset 2px 2px 3px rgba(255, 255, 255, .6),
+
+}
+
+  </style>
+  <body>
+
+
+    <h2> Formulaire     </h2>
+    <center><h6>  <%= titre %> </h6>    </center>
+
+
+    <br></br>
+
+    <center>
+    <table>
+
+        <form method="post" action="/livraison">
+               
+            
+                <tr>
+                    <td><label for="email">Enter your email: </label>
+
+                       </td>
+                    <td>
+                        <input type="email" id="email" name="email"
+                               size="30" ><!---required onClick="donnee()"
+                                <script>
+                                    function donnee(){
+                                         return document.getElementById("email").value 
+
+                                    }
+        </script>--> 
+                    </td>
+                </tr>
+
+                
+                <tr>
+                    <td><label for="mdp"> Enter your password: </label></td>
+                    <td>
+                        <input type="password" id="mdp" name="mdp">
+                    </td>
+                </tr>
+               
+                <tr>
+                    <td><label for="amdp"> Show password:</label></td>
+                    <td>
+                        <input type="checkbox" id="amdp" name="amdp">
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td>
+                        <button type="reset" name="reset" id="reset"> Clear</button>
+                        <button type="submit" name="submit" id="submit" > Send</button>
+                    </td>
+                </tr>
+    
+        </form>
+
+</table>
+</center>
+
+<center>
+    <a href="/welcome" > Retour à la page principale</a>
+    </center>
+
+  </body>
+</html>
